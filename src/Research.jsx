@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -10,31 +11,44 @@ export default function Research() {
 
   const researchProjects = [
     {
-      title: "Forest Guard — AI for Climate Action (UN SDG 13)",
-      year: "2025",
+      title: "NeuroIntent — Neural Computer Architecture",
+      year: "2026–2027 | In Development",
       focus:
-        "A machine learning system designed to detect and predict deforestation patterns using satellite imagery and environmental datasets.",
-      tools: "Python, TensorFlow, Pandas, NumPy, OpenCV, Flask",
+        "A Neural Computer Architecture for Translating Internally Generated Human Intentions into Computer Actions. This final-year research project investigates EEG-based intention decoding, computer-context fusion, confidence gating, and secure action translation.",
+      tools:
+        "Python, Machine Learning, Deep Learning, EEG Signal Processing, Context-Aware AI",
       impact:
-        "Supports climate conservation efforts by enabling proactive forest monitoring and data-driven decision-making for sustainability.",
+        "Research objective: Design and evaluate an AI-driven neural-computer prototype that interprets internally generated intentions and translates predictions into context-appropriate computer actions while controlling uncertainty and false actions.",
     },
     {
-      title: "AI-Enhanced Academic Recommendation System",
-      year: "2024",
+      title: "IntentShield — Adversarially Robust Behavioural AI",
+      year: "Paper 1 | Active Research & Development",
       focus:
-        "Developed a data-driven system that recommends personalized study resources using natural language processing and clustering algorithms.",
-      tools: "Python, Scikit-learn, NLP, React, Flask",
+        "Adversarially Robust AI for Concealed-Intent and Behavioural Conflict Detection. Investigates whether observable interaction patterns can reveal behavioural inconsistencies, uncertainty, or deliberate manipulation in controlled, consent-based experiments.",
+      tools:
+        "Machine Learning, Adversarial ML, Human–Computer Interaction, Explainable AI, Behavioural Computing",
       impact:
-        "Improved user engagement and academic performance by tailoring content to individual learning patterns.",
+        "Research objective: Develop an uncertainty-aware system that evaluates conflicting behavioural evidence, tests robustness against manipulation, and identifies when human review is required without claiming to know a person's hidden intentions.",
     },
     {
-      title: "Predictive Health Analytics using ML",
-      year: "2023",
+      title: "TrustMesh — Self-Healing Secure Edge AI",
+      year: "Paper 2 | Active Research & Development",
       focus:
-        "Built an end-to-end predictive model that forecasts potential health risks based on patient lifestyle and genetic data.",
-      tools: "Python, Pandas, Matplotlib, XGBoost, Django",
+        "Self-Healing Secure Edge AI for Critical Systems Under Network Failure and Cyberattack. Investigates distributed AI infrastructure that detects unreliable nodes and dynamically redistributes workloads during failures, disconnections, or cyber disruption.",
+      tools:
+        "Distributed Systems, Edge Computing, Cloud Computing, Cybersecurity, AI, Resilient Systems",
       impact:
-        "Enabled early risk identification and preventive healthcare planning with a 90% accuracy rate.",
+        "Research objective: Evaluate service availability, recovery time, latency, workload migration, resource efficiency, scalability, and resilience under multiple simultaneous failures.",
+    },
+    {
+      title: "NeuroIntent Advanced — Behavioural-Neural Fusion",
+      year: "Paper 3 | Active Research & Development",
+      focus:
+        "Secure Real-Time Fusion of Behavioural and Neural Signals for Anticipatory Human–Computer Interaction. Proposes a behavioural-first AI architecture that uses neural evidence selectively when behavioural inference becomes ambiguous or contradictory.",
+      tools:
+        "Multimodal AI, Human–Computer Interaction, EEG, Behavioural Computing, HPC, Cybersecurity",
+      impact:
+        "Research objective: Investigate whether selective neural processing, uncertainty-aware multimodal fusion, and secure decision support can improve intention interpretation while reducing unnecessary computational cost and latency.",
     },
   ];
 
@@ -43,10 +57,14 @@ export default function Research() {
       <div className="research-container">
         <h1 data-aos="fade-up">Research & Innovation</h1>
         <p data-aos="fade-up" data-aos-delay="150">
-          My research integrates <strong>Artificial Intelligence</strong>,
-          <strong> sustainability</strong>, and <strong>data systems</strong> to
-          solve real-world problems through intelligent, ethical, and impactful
-          technologies.
+          My research interests span{" "}
+          <strong>Artificial Intelligence</strong>,{" "}
+          <strong>Cybersecurity</strong>,{" "}
+          <strong>Neural Computing</strong>, and{" "}
+          <strong>Secure Distributed Systems</strong>.
+          I aim to develop intelligent, trustworthy,
+          and resilient technologies through practical
+          experimentation and interdisciplinary research.
         </p>
 
         <div className="research-grid">
@@ -63,7 +81,7 @@ export default function Research() {
               </div>
               <p className="focus">{project.focus}</p>
               <p className="tools">
-                <strong>Tools:</strong> {project.tools}
+                <strong>Tools / Research Areas:</strong> {project.tools}
               </p>
               <p className="impact">{project.impact}</p>
             </div>

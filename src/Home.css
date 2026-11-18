@@ -1,125 +1,369 @@
+
+/* ==========================================
+   SUNJIDA RINE — HOME PAGE
+   Responsive Hero Design
+========================================== */
+
+/* ---------- Home Container ---------- */
+
 .home {
-  background: radial-gradient(circle at top, #0d1117, #000);
+  background: radial-gradient(
+    circle at top,
+    #0d1117,
+    #000
+  );
   color: #e6edf3;
   text-align: center;
   min-height: 100vh;
+  min-height: 100dvh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   position: relative;
-  padding: 100px 20px;
+  padding: 80px 24px;
   overflow: hidden;
+  box-sizing: border-box;
+  isolation: isolate;
 }
 
-/* Glow effect behind */
+/* ---------- Blue Glow Background ---------- */
+
 .home::before {
   content: "";
   position: absolute;
+
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(88,166,255,0.15), transparent 70%);
+
+  background: radial-gradient(
+    circle,
+    rgba(88, 166, 255, 0.15),
+    transparent 70%
+  );
+
   top: 20%;
   left: 50%;
+
   transform: translateX(-50%);
   filter: blur(100px);
+
   animation: glow 6s ease-in-out infinite alternate;
+  z-index: -1;
+  pointer-events: none;
 }
 
 @keyframes glow {
-  from { opacity: 0.6; transform: translateX(-50%) scale(1); }
-  to { opacity: 1; transform: translateX(-50%) scale(1.05); }
+  from {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.05);
+  }
 }
 
-/* Profile image */
-.profile-container {
+/* ---------- Profile Container ---------- */
+
+.home .profile-container {
   margin-bottom: 1.5rem;
-}
-
-.profile-ring {
-  width: 165px;
-  height: 165px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #58a6ff, #1f6feb);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3px;
-  animation: float 6s ease-in-out infinite;
 }
 
-.profile-pic {
-  width: 160px;
-  height: 160px;
+/* ---------- Animated Profile Ring ---------- */
+
+.home .profile-ring {
+  width: 165px;
+  height: 165px;
+
   border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #0d1117;
-}
 
-/* Headings */
-.hero-name {
-  color: #58a6ff;
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-top: 0.5rem;
-}
+  background: linear-gradient(
+    145deg,
+    #58a6ff,
+    #1f6feb
+  );
 
-.hero-title {
-  color: #c9d1d9;
-  font-size: 1.05rem;
-  margin-bottom: 1.5rem;
-}
-
-.hero-text {
-  color: #c9d1d9;
-  max-width: 700px;
-  line-height: 1.6;
-  font-size: 1rem;
-  margin: 0 auto 2rem;
-}
-
-/* Buttons */
-.hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+
+  padding: 3px;
+
+  animation: float 6s ease-in-out infinite;
+  box-sizing: border-box;
 }
 
-.btn-primary,
-.btn-secondary {
-  padding: 10px 24px;
-  border-radius: 6px;
+/* ---------- Profile Photograph ---------- */
+
+.home .profile-pic {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 3px solid #0d1117;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* ---------- Hero Name ---------- */
+
+.home .hero-name {
+  color: #58a6ff;
+
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+
+  margin: 0.5rem 0 0.8rem;
+  line-height: 1.3;
+}
+
+/* ---------- Professional Title ---------- */
+
+.home .hero-title {
+  color: #c9d1d9;
+
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  font-weight: 600;
+
+  max-width: 700px;
+
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+/* ---------- Professional Biography ---------- */
+
+.home .hero-text {
+  color: #c9d1d9;
+
+  width: 100%;
+  max-width: 700px;
+
+  line-height: 1.75;
+  font-size: 1rem;
+
+  margin: 0 auto 2rem;
+  overflow-wrap: break-word;
+}
+
+.home .hero-text strong {
+  color: #e6edf3;
+  font-weight: 600;
+}
+
+/* ---------- Hero Buttons Container ---------- */
+
+.home .hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  width: 100%;
+}
+
+/* ---------- Shared Button Styling ---------- */
+
+.home .btn-primary,
+.home .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 24px;
+
+  border-radius: 7px;
+
+  font-family: inherit;
   font-weight: 600;
   font-size: 0.95rem;
+
   text-decoration: none;
-  transition: all 0.3s ease;
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
-.btn-primary {
+/* ---------- Download CV Button ---------- */
+
+.home .btn-primary {
   background-color: #238636;
-  color: white;
-}
-.btn-primary:hover {
-  background-color: #2ea043;
+  color: #fff;
+  border: 1px solid #238636;
 }
 
-.btn-secondary {
+.home .btn-primary:hover {
+  background-color: #2ea043;
+  transform: translateY(-2px);
+}
+
+/* ---------- Explore Button ---------- */
+
+.home .btn-secondary {
+  background-color: transparent;
+
   border: 1.8px solid #58a6ff;
   color: #58a6ff;
 }
-.btn-secondary:hover {
-  background-color: #58a6ff1a;
+
+.home .btn-secondary:hover {
+  background-color: rgba(88, 166, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-/* Float animation */
+/* ---------- Keyboard Accessibility ---------- */
+
+.home .btn-primary:focus-visible,
+.home .btn-secondary:focus-visible {
+  outline: 3px solid #79c0ff;
+  outline-offset: 4px;
+}
+
+/* ---------- Floating Animation ---------- */
+
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
-/* Responsive */
+/* ==========================================
+   TABLET RESPONSIVENESS
+========================================== */
+
+@media (max-width: 900px) {
+  .home {
+    padding: 100px 24px 60px;
+  }
+
+  .home .hero-text {
+    max-width: 650px;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
 @media (max-width: 768px) {
-  .hero-name { font-size: 1.8rem; }
-  .hero-title { font-size: 0.95rem; }
-  .hero-text { font-size: 0.9rem; }
+  .home {
+    padding: 100px 20px 50px;
+    min-height: 100dvh;
+  }
+
+  .home .profile-ring {
+    width: 155px;
+    height: 155px;
+  }
+
+  .home .hero-name {
+    font-size: 1.9rem;
+  }
+
+  .home .hero-title {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .home .hero-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+  }
+
+  .home .hero-buttons {
+    gap: 12px;
+  }
+
+  .home .btn-primary,
+  .home .btn-secondary {
+    padding: 11px 18px;
+    font-size: 0.9rem;
+  }
+
+  .home::before {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE DEVICES
+========================================== */
+
+@media (max-width: 480px) {
+  .home {
+    padding: 96px 18px 48px;
+  }
+
+  .home .profile-container {
+    margin-bottom: 1.25rem;
+  }
+
+  .home .profile-ring {
+    width: 145px;
+    height: 145px;
+  }
+
+  .home .hero-name {
+    font-size: 1.8rem;
+  }
+
+  .home .hero-title {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .home .hero-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 1.75rem;
+  }
+
+  .home .hero-buttons {
+    gap: 10px;
+  }
+
+  .home .btn-primary,
+  .home .btn-secondary {
+    font-size: 0.85rem;
+    padding: 11px 14px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .home::before,
+  .home .profile-ring {
+    animation: none;
+  }
+
+  .home .btn-primary,
+  .home .btn-secondary {
+    transition: none;
+  }
 }

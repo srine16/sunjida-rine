@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -21,7 +22,9 @@ export default function About() {
               className="about-image"
             />
             <h2>Sunjida Rine</h2>
-            <p>BSc (Hons) Computer Science with Artificial Intelligence</p>
+            <p>
+              BSc (Hons) Computer Science with Artificial Intelligence
+            </p>
             <p>Brunel University London</p>
           </div>
         </div>
@@ -29,31 +32,57 @@ export default function About() {
         {/* ===== Right Side: Description ===== */}
         <div className="about-right" data-aos="fade-left">
           <h1>About Me</h1>
+
           <p>
-            I’m studying <strong>Computer Science </strong> specializing in{" "}
-            <strong>Artificial Intelligence, Full-Stack Development</strong>,
-            and data-driven software engineering. My work bridges intelligent
-            systems with beautiful design — creating tools that are both smart
-            and user-focused.
+            I'm a final-year <strong>BSc (Hons) Computer Science
+            with Artificial Intelligence</strong> student at
+            Brunel University London, focusing on{" "}
+            <strong>
+              AI Engineering, Cybersecurity, and Software Engineering
+            </strong>.
+            My interests lie in developing intelligent,
+            secure, and reliable computing systems that
+            address real-world challenges.
           </p>
 
           <p>
-            I have hands-on experience with technologies such as{" "}
-            <strong>Java, Spring Boot, SQL, Python, React</strong>, and{" "}
-            <strong>Machine Learning</strong> frameworks. I enjoy developing
-            solutions that make real-world impact — from predictive systems to
-            scalable backend architectures.
+            My technical experience includes{" "}
+            <strong>
+              Python, Java, JavaScript, React, Spring Boot,
+              SQL, and Machine Learning
+            </strong>.
+            I'm particularly interested in neural computing,
+            adversarial machine learning, secure AI systems,
+            and software architecture.
           </p>
 
           <p>
-            Currently, I’m working on <strong>Forest Guard</strong>, an academic
-            AI-powered project aligned with <strong>UN SDG 13 (Climate Action)</strong>,
-            designed to monitor and predict deforestation patterns using ML
-            models and satellite data.
+            My current final-year research project,{" "}
+            <strong>NeuroIntent</strong>, investigates an
+            AI-driven neural-computer architecture for
+            interpreting internally generated human intentions
+            and translating them into secure, context-aware
+            computer actions.
+          </p>
+
+          <p>
+            I'm the <strong>Founder of Rineq Technologies</strong>,
+            a developing deep-technology venture focused on{" "}
+            <strong>
+              AI automation software, cybersecurity solutions,
+              and advanced artificial intelligence research
+            </strong>.
+            My longer-term research roadmap includes
+            IntentShield, TrustMesh, and advanced
+            behavioural-neural computing.
           </p>
 
           <div className="about-highlight">
-            💡 <em>Actively seeking placement opportunities in Software Engineering and AI Development.</em>
+            💡 <em>
+              Building towards a career in AI and Security
+              Engineering through research, practical
+              software development, and technology entrepreneurship.
+            </em>
           </div>
         </div>
       </div>

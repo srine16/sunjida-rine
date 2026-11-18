@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./Footer.css";
 
@@ -7,11 +8,27 @@ export default function Footer() {
   return (
     <footer className="footer">
       <p>
-        © {currentYear} <strong>Sunjida Rine</strong> — All Rights Reserved.
+        © {currentYear}{" "}
+        <strong>Sunjida Rine</strong>
+        {" "}— All Rights Reserved.
       </p>
+
       <p>
-        Designed & Developed by <span className="highlight">Sunjida Rine</span> |{" "}
-        <span className="university">Brunel University London</span>
+        AI &amp; Security Engineer | Founder of{" "}
+        <span className="highlight">
+          Rineq Technologies
+        </span>
+      </p>
+
+      <p>
+        Designed &amp; Developed by{" "}
+        <span className="highlight">
+          Sunjida Rine
+        </span>
+        {" "} | {" "}
+        <span className="university">
+          Brunel University London
+        </span>
       </p>
     </footer>
   );

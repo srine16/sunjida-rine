@@ -1,48 +1,136 @@
+
+/* ==========================================
+   SUNJIDA RINE — PORTFOLIO FOOTER
+========================================== */
+
+/* ---------- Footer Container ---------- */
+
 .footer {
+  width: 100%;
+  box-sizing: border-box;
+
   background-color: #11161b;
-  color: #ccc;
+  color: #c9d1d9;
+
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
+
   font-size: 0.95rem;
-  margin-top: 4rem;
+  line-height: 1.7;
+
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease-in-out;
+
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
+/* ---------- Footer Paragraphs ---------- */
+
 .footer p {
-  margin: 0.3rem 0;
-  line-height: 1.6;
+  margin: 0.4rem auto;
+  line-height: 1.7;
+
+  max-width: 900px;
+  overflow-wrap: break-word;
 }
+
+/* ---------- Name Styling ---------- */
 
 .footer strong {
   color: #4fa3ff;
   font-weight: 600;
 }
 
+/* ---------- Highlighted Text ---------- */
+
 .footer .highlight {
   color: #4fa3ff;
   font-weight: 600;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 }
+
+/* ---------- Highlight Hover ---------- */
 
 .footer .highlight:hover {
   color: #00d084;
-  text-shadow: 0 0 10px rgba(0, 208, 132, 0.5);
+
+  text-shadow: 0 0 10px rgba(
+    0,
+    208,
+    132,
+    0.5
+  );
 }
+
+/* ---------- University ---------- */
 
 .footer .university {
   color: #aaa;
   font-style: italic;
 }
 
+/* ---------- Footer Hover ---------- */
+
 .footer:hover {
   background-color: #0c1014;
-  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+
+  box-shadow: 0 -4px 15px rgba(
+    0,
+    0,
+    0,
+    0.3
+  );
 }
 
-@media (max-width: 768px) {
+/* ==========================================
+   TABLET RESPONSIVENESS
+========================================== */
+
+@media (max-width: 900px) {
   .footer {
+    padding: 1.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 1.5rem 1rem;
     font-size: 0.85rem;
-    padding: 1.5rem 0.5rem;
+  }
+
+  .footer p {
+    margin: 0.6rem auto;
+    line-height: 1.65;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE DEVICES
+========================================== */
+
+@media (max-width: 380px) {
+  .footer {
+    padding: 1.25rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer,
+  .footer .highlight {
+    transition: none;
   }
 }

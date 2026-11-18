@@ -1,10 +1,13 @@
-/* === Sidebar Container === */
+
+/* ===== Sidebar Container ===== */
 .sidebar {
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
+  height: 100dvh;
   width: 230px;
+  box-sizing: border-box;
   background-color: #161b22;
   padding: 60px 0;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
@@ -12,18 +15,20 @@
   flex-direction: column;
   align-items: center;
   z-index: 1000;
+  overflow-y: auto;
   transition: transform 0.3s ease-in-out;
 }
 
-/* === Sidebar Title === */
+/* ===== Sidebar Title ===== */
 .sidebar-title {
   color: #58a6ff;
   font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 40px;
+  text-align: center;
 }
 
-/* === Links === */
+/* ===== Navigation Links ===== */
 .sidebar ul {
   list-style: none;
   padding: 0;
@@ -45,16 +50,20 @@
   justify-content: flex-start;
   padding: 12px 25px;
   border-radius: 8px;
-  transition: all 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .sidebar a .icon {
   margin-right: 10px;
   font-size: 1.2rem;
   opacity: 0.8;
+  flex-shrink: 0;
 }
 
-/* Hover + Active */
+/* ===== Hover and Active Navigation ===== */
 .sidebar a:hover {
   background-color: #1f2937;
   color: #79c0ff;
@@ -67,52 +76,68 @@
   font-weight: 600;
 }
 
-/* === Hamburger Button === */
+.sidebar a:focus-visible {
+  outline: 2px solid #79c0ff;
+  outline-offset: -3px;
+}
+
+/* ===== Hamburger Button ===== */
 .hamburger {
   display: none;
   position: fixed;
   top: 20px;
   left: 20px;
   background: #238636;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 6px;
   padding: 10px 14px;
   font-size: 1.3rem;
   cursor: pointer;
   z-index: 1100;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .hamburger:hover {
   background: #2ea043;
 }
 
-/* === Mobile Responsive Sidebar === */
+.hamburger:focus-visible {
+  outline: 2px solid #79c0ff;
+  outline-offset: 3px;
+}
+
+/* ===== Tablet and Mobile Sidebar ===== */
 @media (max-width: 900px) {
   .sidebar {
+    width: 70%;
+    max-width: 280px;
+    padding: 90px 0 25px;
+    align-items: flex-start;
     transform: translateX(-100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      transform 0.3s ease-in-out,
+      visibility 0.3s ease-in-out;
   }
 
   .sidebar.open {
     transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .hamburger {
-    display: block;
-  }
-
-  .sidebar {
-    width: 70%;
-    max-width: 280px;
-    height: 100vh;
-    align-items: flex-start;
-    padding: 50px 0 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .sidebar-title {
     display: block;
-    margin-bottom: 25px;
+    margin: 0 20px 25px;
+    text-align: left;
   }
 
   .sidebar ul {
@@ -120,10 +145,34 @@
   }
 
   .sidebar li {
-    margin: 15px 0;
+    margin: 10px 0;
   }
 
   .sidebar a {
-    padding: 10px 20px;
+    padding: 12px 20px;
+    border-radius: 0 8px 8px 0;
+  }
+}
+
+/* ===== Small Mobile Devices ===== */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 78%;
+    max-width: 280px;
+  }
+
+  .hamburger {
+    top: 16px;
+    left: 16px;
+    padding: 10px 12px;
+  }
+}
+
+/* ===== Reduced Motion Accessibility ===== */
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .sidebar a,
+  .hamburger {
+    transition: none;
   }
 }

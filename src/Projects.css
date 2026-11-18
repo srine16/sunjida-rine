@@ -1,73 +1,253 @@
+
+/* ==========================================
+   SUNJIDA RINE — FEATURED PROJECTS
+   Responsive Project Cards
+========================================== */
+
+/* ---------- Projects Section ---------- */
+
 .projects-section {
-  background: radial-gradient(circle at top, #010409, #0d1117);
+  background: radial-gradient(
+    circle at top,
+    #010409,
+    #0d1117
+  );
+
   color: #e6edf3;
   min-height: 100vh;
+  min-height: 100dvh;
+
   padding: 80px 5%;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  box-sizing: border-box;
 }
 
+/* ---------- Main Container ---------- */
+
 .projects-container {
+  width: 100%;
   max-width: 1100px;
+  min-width: 0;
+  margin: 0 auto;
   text-align: center;
 }
 
+/* ---------- Heading ---------- */
+
 .projects-container h1 {
   color: #58a6ff;
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  margin: 0 0 1rem;
 }
 
-.projects-container p {
+/* ---------- Section Introduction ---------- */
+
+.projects-container > p {
   color: #c9d1d9;
-  margin-bottom: 3rem;
-  line-height: 1.6;
+  margin: 0 auto 3rem;
+  line-height: 1.7;
   font-size: 1rem;
+  max-width: 750px;
 }
 
-/* Grid Layout */
+/* ---------- Responsive Project Grid ---------- */
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 280px), 1fr)
+  );
+
   gap: 1.5rem;
+  width: 100%;
+  align-items: stretch;
 }
 
-.project-card {
-  background: linear-gradient(145deg, #161b22, #0d1117);
+/* ---------- Project Cards ---------- */
+
+.projects-grid .project-card {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+
+  background: linear-gradient(
+    145deg,
+    #161b22,
+    #0d1117
+  );
+
   border-radius: 15px;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 8px 25px rgba(56, 139, 253, 0.15);
-  transition: all 0.3s ease;
-  cursor: pointer;
   border-left: 3px solid #58a6ff;
+
+  padding: 2rem 1.5rem;
+
+  box-shadow: 0 8px 25px rgba(56, 139, 253, 0.15);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow-wrap: anywhere;
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 35px rgba(56, 139, 253, 0.3);
+/* ---------- Card Hover ---------- */
+
+.projects-grid .project-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 12px 35px rgba(
+    56,
+    139,
+    253,
+    0.3
+  );
+
+  border-left-color: #79c0ff;
+}
+
+/* ---------- Card Content ---------- */
+
+.project-content {
+  width: 100%;
+  min-width: 0;
 }
 
 .project-content h2 {
   color: #58a6ff;
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.45;
+  margin: 0 0 0.9rem;
+  overflow-wrap: anywhere;
 }
 
-.project-content .category {
+/* ---------- Project Category ---------- */
+
+.projects-grid .project-content .category {
   color: #a6b2be;
   font-size: 0.9rem;
-  margin-bottom: 0.3rem;
+  line-height: 1.5;
+  margin: 0 0 0.6rem;
 }
 
-.project-content .year {
+/* ---------- Project Year ---------- */
+
+.projects-grid .project-content .year {
   color: #9fd4ff;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  margin: 0 0 0.8rem;
 }
 
-/* Responsive */
+/* ---------- Project Development Status ---------- */
+
+.projects-grid .project-status {
+  display: inline-block;
+
+  color: #3fb950;
+  background-color: rgba(63, 185, 80, 0.09);
+
+  border: 1px solid rgba(63, 185, 80, 0.35);
+  border-radius: 20px;
+
+  padding: 6px 12px;
+  margin: 0;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ---------- Keyboard Focus ---------- */
+
+.projects-grid .project-card:focus-visible {
+  outline: 3px solid #79c0ff;
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   TABLET RESPONSIVENESS
+========================================== */
+
 @media (max-width: 900px) {
+  .projects-section {
+    padding: 90px 24px 60px;
+    align-items: flex-start;
+  }
+
   .projects-grid {
-    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .projects-container > p {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 600px) {
+  .projects-section {
+    padding: 100px 18px 50px;
+  }
+
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .projects-grid .project-card {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .project-content h2 {
+    font-size: 1.15rem;
+  }
+
+  .projects-container > p {
+    font-size: 0.92rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE DEVICES
+========================================== */
+
+@media (max-width: 380px) {
+  .projects-section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .projects-grid .project-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-grid .project-card {
+    transition: none;
+  }
+
+  .projects-grid .project-card:hover {
+    transform: none;
   }
 }

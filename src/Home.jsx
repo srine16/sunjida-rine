@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ Import navigation hook
 import AOS from "aos";
@@ -30,15 +31,19 @@ export default function Home() {
         Sunjida Rine
       </h1>
       <h3 className="hero-title" data-aos="fade-up" data-aos-delay="200">
-        BSc (Hons) Computer Science with Artificial Intelligence — Brunel
-        University London
+        AI &amp; Security Engineer | Founder of Rineq Technologies
       </h3>
 
       <p className="hero-text" data-aos="fade-up" data-aos-delay="300">
-        I’m a <strong>Full-Stack Developer</strong> specializing in{" "}
-        <strong>Java, Spring Boot, SQL, and React</strong>. Passionate about
-        building intelligent, data-driven applications that merge elegant
-        design, efficient backend systems, and user-centered interfaces.
+        I’m a final-year <strong>BSc (Hons) Computer Science with
+        Artificial Intelligence</strong> student at Brunel University
+        London, focusing on <strong>AI Engineering, Cybersecurity,
+        and Software Engineering</strong>. As the <strong>Founder
+        of Rineq Technologies</strong>, I aim to build intelligent,
+        secure, and resilient computing systems. My current research
+        project, <strong>NeuroIntent</strong>, explores AI-driven
+        interpretation of neural intentions and secure translation
+        into computer actions.
       </p>
 
       {/* ====== Buttons Section ====== */}

@@ -1,53 +1,48 @@
-import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
-import Sidebar from "./Sidebar";
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import Research from "./Research";
 import Contact from "./Contact";
+import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 
 import "./App.css";
 
-function AnimatedRoutes() {
-  const location = useLocation();
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-    });
-    AOS.refresh(); // 🔁 Recalculate animations after route change
-  }, [location]);
+function App() {
+  const basename =
+    window.location.hostname === "srine16.github.io"
+      ? "/sunjida-rine"
+      : "";
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/skills" element={<Skills />} />
-      <Route path="/research" element={<Research />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-  );
-}
-
-export default function App() {
-  return (
-    <BrowserRouter>
-      <div style={{ display: "flex" }}>
+    <Router basename={basename}>
+      <div className="app">
         <Sidebar />
-        <main style={{ flex: 1, padding: "100px 2rem 2rem 250px" }}>
-          <AnimatedRoutes />
+
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+
           <Footer />
-        </main>
+        </div>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
+
+export default App;

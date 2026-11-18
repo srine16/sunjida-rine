@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -15,56 +16,84 @@ export default function Projects() {
     {
       title: "Forest Guard — AI for Climate Action",
       year: "2025",
+      status: "Completed",
       category: "AI & Sustainability",
       description:
-        "An AI-powered deforestation detection platform using satellite data and CNN-based image classification. Built to align with UN SDG 13 (Climate Action).",
+        "An academic AI project focused on detecting deforestation patterns using satellite data and machine learning, aligned with UN SDG 13 (Climate Action).",
       tech: "Python, TensorFlow, Flask, OpenCV, React",
-      link: "https://github.com/",
+      link: null,
     },
     {
-      title: "Student Management System",
+      title: "Brunel Sports — Student Management System",
       year: "2024",
-      category: "Full-Stack Development",
+      status: "Completed",
+      category: "Software Engineering",
       description:
-        "A CRUD-based web app enabling secure student record management with login authentication, dashboards, and SQL integration.",
+        "A university software engineering project focused on student and sports-related management, including record management, application workflows, and database integration.",
       tech: "Java, Spring Boot, MySQL, React",
-      link: "https://github.com/",
+      link: null,
     },
     {
       title: "Personal Portfolio Platform",
-      year: "2024",
+      year: "2026",
+      status: "Ongoing Development",
       category: "Frontend Engineering",
       description:
-        "A responsive personal portfolio site showcasing my technical, academic, and AI research projects — built from scratch for scalability and UX.",
-      tech: "React, AOS, CSS3, JavaScript",
-      link: "https://github.com/",
+        "A React-based personal portfolio showcasing my software engineering work, artificial intelligence projects, and ongoing research. Currently improving content, functionality, responsiveness, and deployment.",
+      tech: "React, JavaScript, CSS3, AOS",
+      link: "https://github.com/srine16/sunjida-rine",
+    },
+    {
+      title: "SignBridge AI — British Sign Language Recognition",
+      year: "2026",
+      status: "Ongoing Development",
+      category: "Computer Vision & Accessibility",
+      description:
+        "An AI accessibility project being developed to recognise selected British Sign Language signs using computer vision and translate recognised signs into readable text. The initial prototype will focus on a limited vocabulary and reliable recognition.",
+      tech:
+        "Python, OpenCV, MediaPipe, PyTorch, React (Planned Stack)",
+      link: null,
+    },
+    {
+      title: "ShadowTrace — AI Counter-Espionage System",
+      year: "2026",
+      status: "Ongoing Development",
+      category: "Cybersecurity & AI Engineering",
+      description:
+        "A defensive cybersecurity software project exploring AI-assisted detection of suspicious processes, potential spyware activity, unusual network behaviour, and unauthorised data access in controlled testing environments.",
+      tech:
+        "Python, Network Analysis, Machine Learning, Cybersecurity (Planned Stack)",
+      link: null,
     },
     {
       title: "AI-Driven Academic Recommender",
       year: "2023",
+      status: "Previous Project — Under Review",
       category: "Machine Learning",
       description:
-        "Developed an NLP-based recommendation model that personalizes learning resources using clustering and classification algorithms.",
+        "An earlier academic project exploring personalised learning resource recommendations through machine learning and natural language processing. Implementation details are being reviewed.",
       tech: "Python, Scikit-learn, Flask, Pandas",
-      link: "https://github.com/",
+      link: null,
     },
     {
       title: "Health Risk Prediction System",
       year: "2023",
+      status: "Previous Project — Under Review",
       category: "AI & Healthcare",
       description:
-        "Predictive analytics project leveraging supervised ML models to forecast potential health risks with 90% accuracy.",
+        "An earlier machine learning project exploring predictive modelling for health-related data. Previous performance claims are being reviewed before publication.",
       tech: "Python, XGBoost, Django, SQL",
-      link: "https://github.com/",
+      link: null,
     },
     {
       title: "E-Commerce Web Application",
       year: "2022",
+      status: "Previous Project — Under Review",
       category: "Software Engineering",
       description:
-        "Full-stack e-commerce app implementing user authentication, payment gateway, and inventory management.",
+        "An earlier software engineering project exploring e-commerce application development, including authentication, inventory management, and transaction workflows.",
       tech: "React, Node.js, Express, MongoDB",
-      link: "https://github.com/",
+      link: null,
     },
   ];
 
@@ -72,24 +101,49 @@ export default function Projects() {
     <section id="projects" className="projects-section">
       <div className="projects-container">
         <h1 data-aos="fade-up">Featured Projects</h1>
+
         <p data-aos="fade-up" data-aos-delay="150">
-          A selection of my most impactful software and AI projects — blending
-          technical precision with design thinking.
+          Explore my completed software engineering projects
+          and ongoing developments in artificial intelligence,
+          cybersecurity, accessibility, and intelligent systems.
         </p>
 
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="project-card"
-              data-aos="fade-up"
-              data-aos-delay={200 + index * 100}
-              onClick={() => setSelectedProject(project)}
-            >
+            
+<div
+  key={index}
+  className="project-card"
+  role="button"
+  tabIndex={0}
+  aria-label={`View details for ${project.title}`}
+  data-aos="fade-up"
+  data-aos-delay={200 + index * 100}
+  onClick={() => setSelectedProject(project)}
+  onKeyDown={(event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setSelectedProject(project);
+    }
+  }}
+>
+
               <div className="project-content">
                 <h2>{project.title}</h2>
-                <p className="category">{project.category}</p>
-                <p className="year">{project.year}</p>
+
+                <p className="category">
+                  {project.category}
+                </p>
+
+                <p className="year">
+                  {project.year}
+                </p>
+
+                {project.status && (
+                  <p className="project-status">
+                    {project.status}
+                  </p>
+                )}
               </div>
             </div>
           ))}
